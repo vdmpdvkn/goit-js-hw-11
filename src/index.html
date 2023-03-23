@@ -3,10 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Image Finder</title>
     <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
+    <header>
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <div class="gallery"></div>
+    <a href="#search-form" class="to-top-link">
+      <img
+        src="./images/up-arrow-svgrepo-com.svg"
+        alt="arrow-to-top"
+        width="30"
+        height="30"
+    /></a>
     <script src="./index.js" type="module"></script>
   </body>
 </html>
