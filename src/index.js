@@ -25,7 +25,7 @@ async function formHandler(evt) {
   const { searchQuery } = evt.currentTarget.elements;
   const trimmedSearchQuery = searchQuery.value.trim();
   if (trimmedSearchQuery === '') {
-    Notify.failure('Введи что то нормальное');
+    Notify.failure('Please fill the field');
     return;
   }
   if (trimmedSearchQuery === querySearch) {
