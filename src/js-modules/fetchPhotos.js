@@ -19,7 +19,7 @@ export async function fetchPhotos(query, page) {
     });
     const totalPages = response.data.totalHits / params.per_page;
     console.log('totalPages->', totalPages);
-    if (response.data.total === 0) {
+    if (response.data.totalHits === 0) {
       Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
@@ -29,8 +29,9 @@ export async function fetchPhotos(query, page) {
       Notify.info("We're sorry, but you've reached the end of search results.");
     }
     if (params.page === 1) {
-      Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
+      Notify.success(`Hooray! We found ${response.data.total} images.`);
     }
+
     return response.data.hits;
   } catch (error) {
     Notify.failure(error.message);
